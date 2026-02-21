@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 
-public class calculator extends Frame implements ActionListener{
+public class calculator extends Frame implements ActionListener,WindowListener{
 
 TextField input;
 Button bt0,bt1,bt2,bt3,bt4,bt5,bt6,bt7,bt8,bt9,add,sub,mul,div,equal,reset;
@@ -67,6 +67,7 @@ calculator(){
 
 
     //add buttons in container
+    addWindowListener(this);
     add(input);
     add(bt0);
     add(bt1);
@@ -206,4 +207,30 @@ public static void main (String[] args){
     new calculator();
 
 }
+
+
+@Override
+public void windowOpened(WindowEvent e) {}
+
+@Override
+public void windowClosing(WindowEvent e) {
+    System.exit(0);
+}
+
+@Override
+public void windowClosed(WindowEvent e) {}
+
+@Override
+public void windowIconified(WindowEvent e) {}
+
+@Override
+public void windowDeiconified(WindowEvent e) {}
+
+@Override
+public void windowActivated(WindowEvent e) {}
+
+@Override
+public void windowDeactivated(WindowEvent e) {}
+
+
 }
